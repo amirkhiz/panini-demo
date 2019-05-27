@@ -1,0 +1,12 @@
+div {
+  display: block;
+
+  &.content {
+    position: relative;
+  }
+}
+
+.red {
+  color: red;
+  background-color: #000000;
+}
