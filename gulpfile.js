@@ -1,10 +1,18 @@
 'use strict';
 
 const gulp = require('gulp');
-const {sass, javascript, pages, server, watch} = require(
-    './src/build-tasks/build');
+const {
+        fonts,
+        images,
+        javascript,
+        pages,
+        sass,
+        server,
+        watch
+      } = require('./src/build-tasks/build');
 
-gulp.task('panini', pages);
-
-gulp.task('default', gulp.series(sass, javascript, 'panini', server, watch));
+gulp.task(
+    'default',
+    gulp.series(images, fonts, sass, javascript, pages, server, watch)
+);
 

@@ -6,9 +6,28 @@ const browser = require('browser-sync');
 const cssnano = require('gulp-cssnano');
 const sass = require('gulp-sass');
 const concat = require('gulp-concat');
-const uglify = require('gulp-uglify');
+const uglify = require('gulp-uglify-es').default;
+const webpack = require('webpack-stream');
 
 const self = module.exports = {
+
+  /**
+   *
+   * @returns {*}
+   */
+  images() {
+    return gulp.src('src/assets/images/**/*').pipe(gulp.dest(
+        'build/assets/images/'));
+  },
+
+  /**
+   *
+   * @returns {*}
+   */
+  fonts() {
+    return gulp.src('src/assets/fonts/**/*').pipe(gulp.dest(
+        'build/assets/fonts/'));
+  },
 
   /**
    *
@@ -22,11 +41,11 @@ const self = module.exports = {
   },
 
   /**
-   *
    * @returns {*}
    */
   javascript() {
     return gulp.src(['src/assets/js/plugins/*.js', 'src/assets/js/app.js'])
+        .pipe(webpack({mode: 'production'}))
         .pipe(concat('app.js'))
         .pipe(uglify())
         .pipe(gulp.dest('build/assets/js'));
