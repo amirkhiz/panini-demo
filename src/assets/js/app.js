@@ -1,14 +1,18 @@
 'use strict';
 
-import $ from 'jquery';
+import Swal from 'sweetalert2';
 
-console.log('Test');
+console.log('Hello World');
 
 let test = 'Test Let';
 console.log(test);
 
-$(function() {
-  $('.content').click(function() {
-    alert('Hello');
+$(function () {
+  $('.content').click(function () {
+    Swal.fire({
+      title: 'The Internet?',
+      text: 'That thing is still around?',
+      icon: 'question'
+    });
   });
 });

@@ -3,12 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Panini Test</title>
+    <link rel="stylesheet" href="{{root}}assets/css/vendor.css">
     <link rel="stylesheet" href="{{root}}assets/css/app.css">
 </head>
 <body>
 {{> header}}
-{{> body}}
+<main id="main-wrapper" class="container">
+    {{> body}}
+</main>
 {{> footer}}
+<script src="{{root}}assets/js/vendor.js"></script>
 <script src="{{root}}assets/js/app.js"></script>
 </body>
 </html>

@@ -1,0 +1,18 @@
+$main-color: #a9ce39;
+$main-color-overlay: #fff;
+$main-color-two: #292b2f;
+$main-color-two-r: 41;
+$main-color-two-g: 43;
+$main-color-two-b: 47;
+$main-color-two-overlay: #fff;
+$main-color-three: #2a94d3;
+$background-color: #f4f4f4;
+
+:root {
+    --main-color: #{$main-color};
+    --main-color-overlay: #{$main-color-overlay};
+    --main-color-two: #{$main-color-two};
+    --main-color-two-overlay: #{$main-color-two-overlay};
+    --main-color-three: #{$main-color-three};
+    --background-color: #{$background-color};
+}

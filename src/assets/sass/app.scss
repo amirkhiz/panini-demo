@@ -1,12 +1,7 @@
-div {
-  display: block;
-
-  &.content {
-    position: relative;
-  }
-}
-
-.red {
-  color: red;
-  background-color: #000000;
+#main-wrapper{
+  height: 100vh;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
