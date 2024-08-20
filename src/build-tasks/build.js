@@ -32,16 +32,12 @@ export const tasks = {
   },
 
   vendorCSS () {
-    return gulp.src([
-      'src/assets/sass/overrides.scss',
-      'node_modules/bootstrap/scss/bootstrap.scss',
-      'node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss',
-      'node_modules/@fortawesome/fontawesome-free/scss/brands.scss',
-      'node_modules/sweetalert2/src/sweetalert2.scss',
-    ])
+    return gulp.src('src/assets/sass/vendor.scss')
       .pipe(sass({ silenceDeprecations: ['mixed-decls'], outputStyle: 'compressed' }))
       .pipe(concat('vendor.css'))
-      .pipe(cleanCSS())
+      .pipe(cleanCSS({
+        inline: ['none']
+      }))
       .pipe(gulp.dest('build/assets/css'));
   },
 
